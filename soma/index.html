@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soma</title>
+
+</head>
+
+<style>
+
+div{
+    text-align: center;
+}
+
+.negrito{
+    font-size: large;
+}
+
+.result{
+    font-style: italic;
+}
+
+</style>
+
+
+<body>
+    <div id="root"></div>
+
+    <div id="sub"></div>
+
+    <div id="mult"></div>
+
+    <div id="divi"></div>
+
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <script type="text/babel">
+
+        class Soma extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p class="negrito">O resultado de {this.props.a} + {this.props.b} é: <p class="result">{this.props.a + this.props.b}</p></p>
+                    </div>
+                )
+            }
+        }
+
+        class Subtracao extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p class="negrito">O resultado de {this.props.a} - {this.props.b} é: <p class="result">{this.props.a - this.props.b}</p></p>
+                    </div>
+                )
+            }
+        }
+
+        class Multiplicacao extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p class="negrito">O resultado de {this.props.a} * {this.props.b} é: <p class="result">{this.props.a * this.props.b}</p></p>
+                    </div>
+                )
+            }
+        }
+
+        class Divisao extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <p class="negrito">O resultado de {this.props.a} / {this.props.b} é: <p class="result">{this.props.a / this.props.b}</p></p>
+                    </div>
+                )
+            }
+        }
+
+        const root = document.getElementById('root');
+        ReactDOM.render(<Soma a={40} b={20} />, root);
+
+        const sub = document.getElementById('sub');
+        ReactDOM.render(<Subtracao a={40} b={10} />, sub);
+        
+        const mult = document.getElementById('mult');
+        ReactDOM.render(<Multiplicacao a={10} b={50} />, mult);
+
+        const divi = document.getElementById('divi');
+        ReactDOM.render(<Divisao a={1000} b={10} />, divi);
+    
+    
+    </script>
+    
+</body>
+</html>
